@@ -1,6 +1,7 @@
 import json
 from django.shortcuts import render
 from django.http import JsonResponse
+from django.forms.models import model_to_dict
 from .models import Product
 
 def api_home(request, *args, **kwarg):
@@ -23,9 +24,7 @@ def get_product(request):
     
     product_data = {}
     if product_model:
-        product_data['id'] = product_model.id
-        product_data['title'] = product_model.title
-        product_data['content'] = product_model.content
-        product_data['price'] = product_model.price
+        # Converting the model directly into dict and sending as JsonResponse
+        product_data = model_to_dict(product_model, fields=['id','title','price'])
 
     return JsonResponse(product_data)
