@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'api',
     'corsheaders',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
@@ -52,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'rest_framework.urls'
+ROOT_URLCONF = 'drf_framework.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'rest_framework.wsgi.application'
+WSGI_APPLICATION = 'drf_framework.wsgi.application'
 
 
 # Database
